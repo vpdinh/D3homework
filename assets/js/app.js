@@ -91,11 +91,11 @@ var toolTip = d3.select("body").append("div")
 
 //Add an onmouseover event to display a tooltip
 var check = g.selectAll("circle,text");
-
+   
 check.on("mouseover", function(d, i) {
- if (key1==="income") {
+ if (key1==="income" || key1 === "age") {
   toolTip
-  .html(`${d.state}<br>${key1.charAt(0).toUpperCase() + key1.substr(1)}: ${d[key1]}USD<br>${key2.charAt(0).toUpperCase() + key2.substr(1)}: ${d[key2]}%`)
+  .html(`${d.state}<br>${key1.charAt(0).toUpperCase() + key1.substr(1)}: ${d[key1]}<br>${key2.charAt(0).toUpperCase() + key2.substr(1)}: ${d[key2]}%`)
   .style('left', d3.event.pageX + 10 + 'px')
   .style('top', d3.event.pageY + 'px')
   .style('display', 'block')
